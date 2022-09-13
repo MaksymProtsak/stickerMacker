@@ -196,15 +196,15 @@ def PrintPackingSticker(pdf, rowSKU, rowCH, rowDate, listSKU):
     pdf.set_font('arialB', '', size=19)
     pdf.write(txt=descrCODE)
 
-    pdf.image("img\ecosoft.png", x=2, y=3, w=65.6, h=45.7)
+    pdf.image("img\ecosoft.png", x=2, y=3, w=65.06396)
 
-    pdf.image("img\EAC.png", x=34, y=48, w=7.9, h=8.2)
+    pdf.image("img\EAC.png", x=34, y=48, h=6.25615)
 
-    pdf.image("img\CE.png", x=10, y=48, w=9.8, h=7.2)
+    pdf.image("img\CE.png", x=10, y=48, h=6.881765)
 
-    pdf.image("img/ukrsepro.png", x=56, y=48, w=8.0, h=11.2)
+    pdf.image("img/ukrsepro.png", x=56, y=48, h=11.26107)
 
-    pdf.image(f"img\{rowSKU.get()}.png", x=73, y=29, w=28.2, h=55.0)
+    pdf.image(f"img\{rowSKU.get()}.png", x=73, y=29, w=28.152675)
 
 
 def PrintGuaranteeSticker(pdf, rowSKU, rowCH, rowDate):
@@ -270,7 +270,7 @@ def Shields_12pcs():
     PrintShield(pdf, sku_variable_12, serial_variable_12,
                 date_variable_12, SKU, move_x_0 + move_x_1, move_y_0 + move_y_1*5)
 
-    pdf.output("Shields.pdf")
+    pdf.output("Шильди.pdf")
 
 
 def GuaranteeStikers_12pcs():
@@ -299,7 +299,7 @@ def GuaranteeStikers_12pcs():
                           serial_variable_11, date_variable_11)
     PrintGuaranteeSticker(pdf, sku_variable_12,
                           serial_variable_12, date_variable_12)
-    pdf.output("GuaranteeSticker.pdf")
+    pdf.output("Стікери гарантії.pdf")
 
     return
 
@@ -331,7 +331,7 @@ def PackingStikers_12pcs():
                         serial_variable_11, date_variable_11, SKU)
     PrintPackingSticker(pdf, sku_variable_12,
                         serial_variable_12, date_variable_12, SKU)
-    pdf.output("PackingSticker.pdf")
+    pdf.output("Стікери упаковки.pdf")
 
 
 def PrintShields_12pcs():
