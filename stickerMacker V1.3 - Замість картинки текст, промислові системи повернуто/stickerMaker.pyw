@@ -10,6 +10,7 @@ from time import strftime
 from tkinter.messagebox import showinfo
 import sys
 import os
+import webbrowser
 os.chdir(sys.path[0])
 
 # V1.2 Змінений розмір стікера гарантії на 40х24, змінений розмір шрифта та висоту рядка
@@ -526,6 +527,10 @@ def SaveAllStickers():
     showinfo(message="Шильди, стікери гарантії та пакування збережені.")
 
 
+def openAuthorLink(url):
+    webbrowser.open_new(url)
+
+
 # Час
 dateCurrent = dt.datetime.now()
 dateLabel = Label(win, font="arial, 20")
@@ -752,8 +757,11 @@ Button(win, text='Зберегти все', command=SaveAllStickers).grid(
     row=6, column=5, ipadx=40, ipady=0, padx=35, pady=0)
 
 #   Напис "розробник"
-Label(win, text='made by maksym.protsak@gmail.com V1.3', bg='#EBEBEB', fg='#808080').grid(
-    row=14, column=5, rowspan=5, sticky='ES')
+authorLink = Label(
+    win, text='maksym.protsak@gmail.com V1.3', bg='#EBEBEB', fg="blue", cursor="hand2")
+authorLink.grid(row=14, column=5, rowspan=5, sticky='ES')
+authorLink.bind(
+    "<Button-1>", lambda e: openAuthorLink("https://tangerine-youtiao-a51230.netlify.app/"))
 
 #   Запуск програми
 win.mainloop()
